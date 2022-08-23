@@ -1,0 +1,48 @@
+.keys_filter .main_filter{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.keys_filter .main_filter div{
+    display: flex;
+}
+
+.keys_style_filter{
+    display: none;
+}
+
+#open_detailed_keys{
+    display: none;
+}
+#open_detailed_keys:checked ~ .keys_style_filter{
+    display: block;
+}
+
+
+
+.main_filter div label{
+    font-weight: 900;
+    font-size: 23px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.keys_style_filter{
+    margin-left: 15px;
+}
+
+.keys_style_filter div label{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.arrow_down_keys{
+    font-size: 23px;
+    font-weight: 00;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}

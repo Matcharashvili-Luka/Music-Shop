@@ -1,0 +1,11 @@
+.drums_filter .main_filter{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.drums_filter .main_filter div{
+    display: flex;
+}

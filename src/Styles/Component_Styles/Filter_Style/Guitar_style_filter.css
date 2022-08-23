@@ -1,0 +1,48 @@
+.guitars_filter .main_filter{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+.guitars_filter .main_filter div{
+    display: flex;
+}
+
+.guitar_style_filter{
+    display: none;
+}
+
+#open_detailed_guitar{
+    display: none;
+}
+#open_detailed_guitar:checked ~ .guitar_style_filter{
+    display: block;
+}
+
+
+
+.main_filter div label{
+    font-weight: 900;
+    font-size: 23px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.guitar_style_filter{
+    margin-left: 15px;
+}
+
+.guitar_style_filter div label{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.arrow_down_guitar{
+    font-size: 23px;
+    font-weight: 400;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+}

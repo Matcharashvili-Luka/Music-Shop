@@ -1,0 +1,26 @@
+.single_product_container{
+    height: 146px;
+    margin-bottom: 20px;
+    display: flex;
+    border-bottom: 1px solid rgb(194, 193, 193);
+}
+
+.single_product_img{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.single_product_info{
+    flex: 2.5;
+    background-color: aqua;
+}
+
+.single_product_buttons{
+    flex: 1;
+    background-color: chocolate;
+}
+
+.single_product_img img{
+    height: 100%;
+}
