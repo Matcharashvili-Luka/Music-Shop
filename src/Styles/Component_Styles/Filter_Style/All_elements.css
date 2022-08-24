@@ -1,0 +1,10 @@
+.all_elements_filter label{
+    font-weight: 900;
+    font-size: 20px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.all_elements_filter{
+    margin-bottom: 15px;
+}

@@ -1,6 +1,7 @@
 .main_filter .prices label{
     font-size: 18px;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .price_range{
@@ -13,4 +14,31 @@
 
 .main_filter .prices{
     margin-top: 10px;
+}
+
+.price_h1_tag{
+    margin-top: 40px;
+}
+
+.price_range p{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1125px) {
+    .price_range{
+        flex-direction: column;
+        text-align: center;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .price_range .firs_p{
+        margin-bottom: 5px;
+        margin-right: auto;
+    }
+    .price_range .second_p{
+        margin-top: 5px;
+        margin-left: auto;
+    }
 }

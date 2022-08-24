@@ -1,0 +1,22 @@
+.other_filter_container .other_filter{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.other_filter_container .other_filter div{
+    display: flex;
+}
+
+.other_filter label{
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.other_h1_tag{
+    margin-top: 40px;
+}

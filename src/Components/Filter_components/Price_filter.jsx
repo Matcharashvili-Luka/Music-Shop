@@ -1,29 +1,43 @@
 import React from 'react';
 import '../../Styles/Component_Styles/Filter_Style/Price_filter.css'
 
-function Price_filter() {
+function Price_filter({ sort_by_incr, set_sort_by_incr, sort_by_decr, set_sort_by_decr, price_filter, set_price_filter,}) {
   return (
     <div className='price_filter_container'>
-        <h1>Price Filter</h1>
+        <h1 className='price_h1_tag'>Price Filter</h1>
         <div className="main_filter">
             <div className='prices'>      
-                <input type="checkbox" id='priceup'/>
-                <label htmlFor="priceup">Price: low to high </label>
+                <input type="checkbox" id='priceup' checked={sort_by_incr}/>
+                <label 
+                    htmlFor="priceup" 
+                    onClick={() => {
+                        set_sort_by_decr(false)
+                        set_sort_by_incr(!sort_by_incr)
+                    }}
+                >Price: low to high </label>
             </div>
             <div className='prices'>      
-                <input type="checkbox" id='pricedown'/>
-                <label htmlFor="pricedown">Price: high to low</label>
+                <input type="checkbox" id='pricedown' checked={sort_by_decr}/>
+                <label 
+                    htmlFor="pricedown" 
+                    onClick={() => {
+                        set_sort_by_incr(false)
+                        set_sort_by_decr(!sort_by_decr)
+                    }}
+                    >Price: high to low</label>
             </div>
         </div>  
         <div className='price_range'>
-            <p>$99</p>
+            <p className='firs_p'>${price_filter}</p>
             <input 
                 type="range" 
-                min={100}
-                max={5000}
+                min={99}
+                max={5999}
                 step={50}
+                value={price_filter}
+                onChange={(e) => set_price_filter(e.target.value)}
             />
-            <p>$4999</p>
+            <p className='second_p'>$5999</p>
         </div>   
     </div>
   )
