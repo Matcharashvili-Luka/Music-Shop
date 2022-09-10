@@ -8,7 +8,7 @@ function All_elements({
 }) {
   return (
     <div className='all_elements_filter'>      
-        <input type="checkbox" id='ALL' checked={all_check}/>
+        <input type="checkbox" id='ALL' checked={all_check} onChange={() => null} />
         <label 
           htmlFor="ALL"
           onClick={() => {

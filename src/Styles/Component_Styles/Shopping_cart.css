@@ -1,0 +1,65 @@
+.SC_container{
+    padding: 2rem 3rem;
+    height: calc(100vh - 95px);
+    overflow: hidden;
+}
+
+.SC_elements{
+    height: 95%;
+    width: 900px;
+    padding: 1rem 4rem 1rem 1rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.Single_SC_element{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin: 30px;
+    align-items: center;
+    height: 115px;
+    overflow: hidden;
+    padding-left: 6rem;
+    border-bottom: 1px solid rgb(216, 213, 213);
+}
+
+.Single_SC_element .image{
+    height: 250px;
+}
+
+.Single_SC_element .image img{
+    height: 100%;
+    transform: rotate(90deg);
+}
+
+.Single_SC_element .info{
+    width: 250px;
+    margin-left: 50px;
+}
+
+.Single_SC_element .info .brand{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.Single_SC_element .info .model{
+    font-size: 18px;
+}
+
+.Single_SC_element .info .price{
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+.Single_SC_element .button button{
+    background-color: #fff;
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.Single_SC_element .button button:hover{
+    background-color: black;
+    color: #fff;
+}

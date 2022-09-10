@@ -14,7 +14,12 @@
 
 .nav_bar_container{
     height: 95px;
-    border-bottom: 1px solid rgb(194, 193, 193)
+    border-bottom: 1px solid rgb(194, 193, 193);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1111;
+    background-color: #fff;
 }
 
 .nav_bar_wrapper{

@@ -33,7 +33,7 @@ export default function App() {
         >
         {Slider_data.map((el) => {
             return (
-                <SwiperSlide>
+                <SwiperSlide key={el.id}>
                     <SlideElement 
                         name = {el.title}
                         info = {el.info}

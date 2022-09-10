@@ -7,7 +7,7 @@ function Price_filter({ sort_by_incr, set_sort_by_incr, sort_by_decr, set_sort_b
         <h1 className='price_h1_tag'>Price Filter</h1>
         <div className="main_filter">
             <div className='prices'>      
-                <input type="checkbox" id='priceup' checked={sort_by_incr}/>
+                <input type="checkbox" id='priceup' checked={sort_by_incr} onChange={() => null} />
                 <label 
                     htmlFor="priceup" 
                     onClick={() => {
@@ -17,7 +17,7 @@ function Price_filter({ sort_by_incr, set_sort_by_incr, sort_by_decr, set_sort_b
                 >Price: low to high </label>
             </div>
             <div className='prices'>      
-                <input type="checkbox" id='pricedown' checked={sort_by_decr}/>
+                <input type="checkbox" id='pricedown' checked={sort_by_decr}onChange={() => null} />
                 <label 
                     htmlFor="pricedown" 
                     onClick={() => {

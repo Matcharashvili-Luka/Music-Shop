@@ -17,7 +17,7 @@ function Guitar_Style_filter({
         <input type="checkbox" id='open_detailed_guitar'/>      
         <div className="main_filter">
             <div>      
-                <input type="checkbox" id='guitar_check' checked={guitars_check}/>
+                <input type="checkbox" id='guitar_check' checked={guitars_check} onChange={() => null} />
                 <label 
                     htmlFor="guitar_check"
                     onClick={() => {
@@ -44,7 +44,7 @@ function Guitar_Style_filter({
         </div>   
         <div className="guitar_style_filter">
             <div>
-                <input type="checkbox" id='s_style' checked={strat_guitar_check}/>
+                <input type="checkbox" id='s_style' checked={strat_guitar_check} onChange={() => null} />
                 <label 
                     htmlFor="s_style"
                     onClick={() => {
@@ -66,7 +66,7 @@ function Guitar_Style_filter({
                 >Stratocaster Style</label>
             </div>
             <div>
-                <input type="checkbox" id='t_style' checked={t_guitar_check}/>
+                <input type="checkbox" id='t_style' checked={t_guitar_check} onChange={() => null} />
                 <label 
                     htmlFor="t_style"
                     onClick={() => {
@@ -88,7 +88,7 @@ function Guitar_Style_filter({
                 >Telecaster Style</label>
             </div>
             <div>
-                <input type="checkbox" id='sc_style' checked={s_cut_guitar_check}/>
+                <input type="checkbox" id='sc_style' checked={s_cut_guitar_check} onChange={() => null} />
                 <label 
                     htmlFor="sc_style"
                     onClick={() => {
@@ -110,7 +110,7 @@ function Guitar_Style_filter({
                 >Single Cut Guitars</label>
             </div>
             <div>
-                <input type="checkbox" id='dc_style' checked={d_cut_guitar_check}/>
+                <input type="checkbox" id='dc_style' checked={d_cut_guitar_check} onChange={() => null} />
                 <label 
                     htmlFor="dc_style"
                     onClick={() => {
@@ -132,7 +132,7 @@ function Guitar_Style_filter({
                 >Double Cut Guitars</label>
             </div>
             <div>
-                <input type="checkbox" id='heavy' checked={h_guitar_check}/>
+                <input type="checkbox" id='heavy' checked={h_guitar_check} onChange={() => null} />
                 <label 
                     htmlFor="heavy"
                     onClick={() => {

@@ -7,7 +7,7 @@ function Other_filter({ is_in_stoct, set_is_in_stoc, is_top_saller, set_is_top_s
         <h1 className='other_h1_tag'>Other Filter</h1>     
         <div className="other_filter">
             <div>      
-                <input type="checkbox" id='in_stock_check' checked={is_in_stoct}/>
+                <input type="checkbox" id='in_stock_check' checked={is_in_stoct} onChange={() => null} />
                 <label 
                     htmlFor="in_stock_check"
                     onClick={() => {set_is_in_stoc(!is_in_stoct)}}
@@ -16,7 +16,7 @@ function Other_filter({ is_in_stoct, set_is_in_stoc, is_top_saller, set_is_top_s
         </div>  
         <div className="other_filter">
             <div>      
-                <input type="checkbox" id='top_selling_check' checked={is_top_saller}/>
+                <input type="checkbox" id='top_selling_check' checked={is_top_saller} onChange={() => null} />
                 <label 
                     htmlFor="top_selling_check"
                     onClick={() => {set_is_top_saller(!is_top_saller)}}

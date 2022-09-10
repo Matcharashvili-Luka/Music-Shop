@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Home from './Pages/Home';
 import NavBar from './Components/NavBar'
@@ -6,11 +6,17 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Product from './Pages/Product';
 import { data } from './Helper/Product_data'
 import Single_product_detailed from './Components/Product_components/Single_product_detailed';
+import Shopping_cart from './Components/Shopping_cart';
 
 
 function App() {
   // to store cart elements.
-  const[cart, setCart] = useState([]);
+  const[cart, setCart] = useState(JSON.parse(localStorage.getItem('Music_Shop_Cart')) || []);
+
+  // to change cart info at LS every time we add smth...
+  useEffect(() => {
+    localStorage.setItem('Music_Shop_Cart', JSON.stringify(cart));
+  }, [cart])
 
   // for single page. to track element id.
   const[el_id, set_el_id] = useState(0);
@@ -35,14 +41,19 @@ function App() {
 
   // to add element to shopping cart;
   function onAdd(product){
-    const exist = cart.find((x) => x.id === product.id);
-    if (exist) {
-      alert('Element is already in Shopping Cart!');
-    } else {
+    let exist = cart.find((el) => el.id === product.id);
+    
+    if(exist){
+      alert('Product is already added!');
+    }else{
       setCart([...cart, product]);
-      alert('Element added to Shopping Cart!');
     }
-  };
+  }
+
+   // to remove element from shopping cart;
+  function onRemove(product){
+    setCart(cart.filter((el) => el.id !== product.id));
+  }
 
   return (
     <Router>
@@ -50,8 +61,6 @@ function App() {
         <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-        </Routes>
-        <Routes>
           <Route 
             path='/products' 
             element={
@@ -60,20 +69,30 @@ function App() {
                   colectData={colectData}
                   all_elements={all_elements}
                   data={data}
+                  onAdd={onAdd}
                 />
               } 
             />
-        </Routes>
-        <Routes>
           <Route 
+            index
             path={`/products/product-${el_id}`} 
             element={
-              <Single_product_detailed 
+              <Single_product_detailed
                 el_id={el_id}
                 all_elements={all_elements} 
                 cart={cart}
                 setCart={setCart}
                 onAdd={onAdd}
+              />
+            }
+          />
+          <Route 
+            index
+            path={`/shopping-cart`} 
+            element={
+              <Shopping_cart 
+                cart={cart}
+                onRemove={onRemove}
               />
             }
           />

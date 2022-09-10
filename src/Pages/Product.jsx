@@ -3,7 +3,7 @@ import Product_Filter from '../Components/Filter_components/Product_Filter';
 import Product_section from '../Components/Product_components/Product_section';
 import '../Styles/Page_Styles/Product.css';
 
-function Product({ colectData, set_el_id, data, all_elements}) { 
+function Product({ colectData, set_el_id, data, all_elements, onAdd }) { 
   // sidebar activation
   let[activate_side_bar, set_activate_side_bar] = useState(false);
 
@@ -161,6 +161,7 @@ function Product({ colectData, set_el_id, data, all_elements}) {
         elements={elements}
         activate_side_bar={activate_side_bar}
         set_activate_side_bar={set_activate_side_bar}
+        onAdd={onAdd}
       />
     </div>
   )

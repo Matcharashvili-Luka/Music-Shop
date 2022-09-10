@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../Styles/Component_Styles/Product_style/Single_product_detailed_info.css';
 
 export default function ({ all_elements, el_id, onAdd }) {
@@ -29,8 +29,8 @@ export default function ({ all_elements, el_id, onAdd }) {
                 <h1>SPECS</h1>
                 {el_info.map((e) => {
                     return(
-                        <div className="el_specs">
-                            <i class="fa-sharp fa-solid fa-check"></i>
+                        <div className="el_specs" key={e}>
+                            <i className="fa-sharp fa-solid fa-check"></i>
                             <p>{e}</p> 
                         </div>
                     )
@@ -44,7 +44,7 @@ export default function ({ all_elements, el_id, onAdd }) {
                     <h3>${Math.floor(element.price * 1.1)}</h3>
                 </div>
                 <div className="is_top_selling">
-                    <p>{element.topSelling ? <i class="fa-solid fa-star"></i> : ''}</p>
+                    <p>{element.topSelling ? <i className="fa-solid fa-star"></i> : ''}</p>
                 </div>
             </div>
             <div className="text">
@@ -54,11 +54,11 @@ export default function ({ all_elements, el_id, onAdd }) {
                 </p>
             </div>
             <div className="button">
-                <button>ADD TO CART</button>
+                <button onClick={() => onAdd(element)}>ADD TO CART</button>
             </div>
             <div className="warranty">
-                <p><i class="fa-solid fa-circle-check"></i>30-Day Money-Back Guarantee</p>
-                <p><i class="fa-solid fa-circle-check"></i> 3-Year Thomann Warranty</p>
+                <p><i className="fa-solid fa-circle-check"></i>30-Day Money-Back Guarantee</p>
+                <p><i className="fa-solid fa-circle-check"></i> 3-Year Thomann Warranty</p>
             </div>
         </div>
     </div>

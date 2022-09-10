@@ -41,7 +41,7 @@ function NavBar() {
             <div className='top_bar_icons'>
               <i className="fa-solid fa-cart-shopping"></i>
               <i 
-                class="fa-solid fa-bars" 
+                className="fa-solid fa-bars" 
                 onClick={() => setNavBarClass(!navBarClass)}
               ></i>
             </div>   
@@ -63,4 +63,4 @@ function NavBar() {
   )
 }
 
-export default NavBar
+export default NavBar;
