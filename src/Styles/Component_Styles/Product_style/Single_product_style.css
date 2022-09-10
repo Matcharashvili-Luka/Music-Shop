@@ -5,6 +5,11 @@
     padding-bottom: 2px;
     border-bottom: 1px solid rgb(194, 193, 193);
     margin-top: 27px;
+    transition: .3s;
+}
+
+.single_product_container:hover{
+    transform: scale(1.03);
 }
 
 .single_product_img{
@@ -142,6 +147,9 @@
     .single_product_buttons .price{
         margin-left: 15px;
     }  
+    .single_product_container:hover{
+        transform: none;
+    }
 }
 
 @media screen and (max-width: 500px) {

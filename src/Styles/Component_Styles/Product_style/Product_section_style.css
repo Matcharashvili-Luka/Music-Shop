@@ -12,12 +12,14 @@
     top: -40px;
     align-items: center;
     background-color: #fff;
+    z-index: 1111111;
     width: 100vw;
 }
 
 .fa-circle-arrow-right{
     font-size: 30px;
     color: purple;
+    cursor: pointer;
     display: none;
     transition: .5s;
 }
@@ -40,7 +42,7 @@
 }
 
 .activate_product_cont_header .fa-circle-arrow-right{
-    margin-left: 5px;
+    margin-left: 27px;
     transform: rotate(180deg);
 }
 

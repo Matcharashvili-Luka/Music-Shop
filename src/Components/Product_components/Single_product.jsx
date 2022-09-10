@@ -13,22 +13,22 @@ function Single_product({ product, set_el_id, onAdd }) {
                     <div className='header'>
                         <p className='brand'>{product.brand}</p>
                         <p className='model'>{product.model}</p>
+                    </div>    
+                    <div className="info">
+                        <div className='first'>
+                            <i className="fa-solid fa-circle-dot"></i>
+                            <p>{product.first}</p>
+                        </div>
+                        <div className='second'>
+                            <i className="fa-solid fa-circle-dot"></i>
+                            <p>{product.second}</p>
+                        </div>
+                        <div className='third'>       
+                            <i className="fa-solid fa-circle-dot"></i>
+                            <p>{product.third}</p>
+                        </div>
                     </div>
                 </Link>
-                <div className="info">
-                    <div className='first'>
-                        <i className="fa-solid fa-circle-dot"></i>
-                        <p>{product.first}</p>
-                    </div>
-                    <div className='second'>
-                        <i className="fa-solid fa-circle-dot"></i>
-                        <p>{product.second}</p>
-                    </div>
-                    <div className='third'>       
-                        <i className="fa-solid fa-circle-dot"></i>
-                        <p>{product.third}</p>
-                    </div>
-                </div>
                 <div className='stock_info'>
                     <p className={product.qtn > 5 ? 'green' : product.qtn > 1 ? 'yellow' : product.qtn > 0 ? 'red' : 'grey'}>
                         {product.qtn > 5 ? 'In stock' : product.qtn > 1 ? 'Few left' : product.qtn > 0 ? 'Last one' : 'Sold out'}

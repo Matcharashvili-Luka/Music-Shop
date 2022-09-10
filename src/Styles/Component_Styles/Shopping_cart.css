@@ -1,16 +1,44 @@
 .SC_container{
-    padding: 2rem 3rem;
+    padding: 2rem 0rem 2rem 3rem;
     height: calc(100vh - 95px);
     overflow: hidden;
+    display: flex;
+}
+
+.SC_container h1{
+    width: 120%;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    background-color: #fff;
+    position: sticky;
+    top: -20px;
+    z-index: 111;
 }
 
 .SC_elements{
-    height: 95%;
-    width: 900px;
+    height: 100%;
+    flex: 2;
     padding: 1rem 4rem 1rem 1rem;
     overflow: hidden;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }
+
+/* custom scrollbar */
+.SC_elements::-webkit-scrollbar{
+    width: 10px;
+}
+.SC_elements::-webkit-scrollbar-track{
+    background-color: rgb(232, 232, 232);
+}
+.SC_elements::-webkit-scrollbar-thumb {
+    background-color: rgb(153, 151, 151);
+    border-radius: 20px;
+}
+/* custom scroll bar end */
 
 .Single_SC_element{
     display: flex;
@@ -18,10 +46,15 @@
     justify-content: space-between;
     margin: 30px;
     align-items: center;
-    height: 115px;
+    height: 120px;
     overflow: hidden;
     padding-left: 6rem;
-    border-bottom: 1px solid rgb(216, 213, 213);
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.Single_SC_element:hover{
+    transform: scale(1.04);
 }
 
 .Single_SC_element .image{
@@ -34,8 +67,25 @@
 }
 
 .Single_SC_element .info{
-    width: 250px;
-    margin-left: 50px;
+    width: 330px;
+    margin-left: 100px;
+}
+
+.Single_SC_element .info div{
+    display: flex;
+    align-items: flex-end;
+}
+
+.Single_SC_element .info div .InStock{
+    color: green;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.Single_SC_element .info div .SoldOut{
+    color: red;
+    font-size: 18px;
+    margin-left: 20px;
 }
 
 .Single_SC_element .info .brand{
@@ -57,9 +107,248 @@
     padding: .5rem 1.5rem;
     cursor: pointer;
     transition: .4s;
+    margin-right: 10px;
 }
 
 .Single_SC_element .button button:hover{
     background-color: black;
     color: #fff;
+}
+
+
+/* ========================== */
+
+.price_calculate_cotainer{
+    padding: 2rem 2rem;
+    flex: .8;
+}
+
+.price_calculate_cotainer .total_cost{
+    margin-top: 20px;
+    font-size: 33px;
+    margin-bottom: 20px;
+}
+
+.price_calculate_cotainer .shipping,
+.price_calculate_cotainer .discount{
+    font-size: 20px;
+}
+
+.price_calculate_cotainer .discount label{
+    color: green;
+}
+
+.price_calculate_cotainer .total{
+    font-size: 35px;
+    margin-top: 20px;
+    font-weight: 900;
+}
+
+.price_calculate_cotainer .button button{
+    font-size: 25px;
+    background-color: black;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: .7rem 1.5rem;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: .4s;
+    font-weight: 900;
+}
+
+.price_calculate_cotainer .button button:hover{
+    background-color: #fff;
+    color: black;
+    outline: 1px solid black;
+}
+
+.price_calculate_cotainer .button button i{
+    margin-left: 10px;
+}
+
+.price_calculate_cotainer .info_tag{
+    background-color: #fff;
+    margin-top: 40px;
+    height: 120px;
+    width: 345px;
+    outline: 3px dashed green;
+    color: green;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price_calculate_cotainer .info_red_tag{
+    background-color: #fff;
+    margin-top: 40px;
+    height: 120px;
+    width: 345px;
+    outline: 3px dashed red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price_calculate_cotainer .info_red_tag div{
+    text-align: center;
+}
+
+.price_calculate_cotainer .info_red_tag .warn{
+    font-size: 22px;
+    color: red;
+}
+
+.price_calculate_cotainer .back_to_products {
+    width: 345px;
+    text-align: center;
+    border-bottom: 1px solid grey;
+}
+
+.price_calculate_cotainer .back_to_products button{
+    font-size: 25px;
+    margin-top: -1rem;
+    margin-bottom: 20px;
+    padding: .5rem 1rem;
+    background-color: #fff;
+    outline: 1px solid black;
+    border: none;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.price_calculate_cotainer .back_to_products button:hover{
+    color: #fff;
+    background-color: blueviolet;
+    outline: 1px solid black;
+}
+
+.price_calculate_cotainer .arrow{
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    display: none;
+    transition: 1s;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1260px) {
+    .SC_container{
+        padding: 2rem 0rem;
+    }
+    .Single_SC_element{
+        height: 160px;
+    }
+    .Single_SC_element .image{
+        height: 220px;
+    }
+    .Single_SC_element .info {
+        margin-right: auto;
+        max-width: 250px;
+    }
+    .Single_SC_element .info div{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .Single_SC_element .info div .InStock,
+    .Single_SC_element .info div .SoldOut{
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .SC_container{
+        flex-direction: column;
+        height: 180vh;
+        display: flex;
+        justify-content: center;
+    }
+    .SC_elements{
+        margin-left: 2%;
+        width: 90%;
+        height: 200px;
+    }
+    .price_calculate_cotainer{
+        margin-top: 100px;
+        width: 400px;
+        text-align: center;
+        margin-left: calc(50vw - 200px);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .Single_SC_element{
+        height: 160px;
+    }
+    .Single_SC_element .image{
+        height: 150px;
+    }
+    .Single_SC_element .image img{
+        transform: rotate(0deg);
+    }
+    .Single_SC_element .info {
+        max-width: 350px;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .SC_container{
+        height: calc(100vh - 95px);
+        overflow: hidden;
+        width: 100%;
+    }
+    .price_calculate_cotainer .arrow{
+        display: flex;
+    }
+    .SC_elements{
+        position: absolute;
+        height: 85%;
+        margin-top: 20px;
+        width: 100%;
+        left: -500px;
+        transition: 1s;
+        background-color: #fff;
+    }
+    .Single_SC_element{
+        height: 200px;
+        width: 100%;
+    }
+    #shown_cart{
+        left: -10px;
+    }
+    .price_calculate_cotainer #rotate_arrow{
+        left: 90%;
+        transform: rotate(180deg);
+        z-index: 111111;
+    }
+    .SC_elements::-webkit-scrollbar{
+        display: none;
+    }
+
+
+    .Single_SC_element .main_container{
+        display: flex;
+        align-items: center;
+    }
+    .Single_SC_element .image{
+        width: 150px;
+        text-align: center;
+        margin-left: -80px;
+    }
+    .Single_SC_element .button button{
+        transform: rotate(-90deg);
+        margin-right: -20px;
+    }
+    .Single_SC_element .info{
+        margin-left: 15px;
+    }
+    .Single_SC_element .info .model{
+        font-size: 15px;
+    }
+    .price_calculate_cotainer{
+        margin-top: 0px;
+    }
 }

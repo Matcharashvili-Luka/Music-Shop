@@ -3,7 +3,7 @@ import '../Styles/Component_Styles/NavBar.css';
 import Announcement from './Announcement';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({ cart }) {
   const[navBarClass, setNavBarClass] = useState(false);
 
   return (
@@ -25,7 +25,12 @@ function NavBar() {
           <div className='right_nav_bar'>
             <p>SIGN IN</p>
             <p>REGISTER</p>
-            <i className="fa-solid fa-cart-shopping"></i>
+            <Link to={'/shopping-cart'} style={{ textDecoration: 'none', color: 'black' }}>
+              <div>
+                <div className='qtn'>{cart.length}</div>
+                <i className="fa-solid fa-cart-shopping"></i>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -36,10 +41,17 @@ function NavBar() {
           <div className='responsive_top_bar'>
             <div className='empty_div'>‎</div>
             <div className='center_nav_bar'>
-              <h1>M-Shop</h1>
+              <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
+                <h1>M-Shop</h1>
+              </Link>
             </div>
             <div className='top_bar_icons'>
-              <i className="fa-solid fa-cart-shopping"></i>
+              <Link to={'/shopping-cart'} style={{ textDecoration: 'none', color: 'black' }}>
+                <div className='shoppingCart'>
+                  <div className='qtn'>{cart.length}</div>
+                  <i className="fa-solid fa-cart-shopping"></i>
+                </div>
+              </Link>
               <i 
                 className="fa-solid fa-bars" 
                 onClick={() => setNavBarClass(!navBarClass)}
