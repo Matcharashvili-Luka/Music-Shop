@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/Component_Styles/NavBar.css';
 import Announcement from './Announcement';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   const[navBarClass, setNavBarClass] = useState(false);
@@ -17,7 +18,9 @@ function NavBar() {
             </div>
           </div>
           <div className='center_nav_bar'>
-            <h1>M-Shop</h1>
+            <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
+              <h1>M-Shop</h1>
+            </Link>
           </div>
           <div className='right_nav_bar'>
             <p>SIGN IN</p>
@@ -44,7 +47,13 @@ function NavBar() {
             </div>   
           </div>
           <div className={!navBarClass ? 'responsive_bottom_bar' : 'active_responsive_bottom_bar'}>
-            <p>PRODUCT</p>
+            <Link 
+              to='/products' 
+              style={{ textDecoration: 'none', color: 'black' }} 
+              onClick={() => setNavBarClass(false)}
+            >
+              <p>PRODUCT</p>
+            </Link>
             <p>SIGN IN / REGISTER</p>
             <p>CONTACT US</p>
           </div>

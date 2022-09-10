@@ -2,7 +2,7 @@ import React from 'react';
 import Single_product from './Single_product';
 import '../../Styles/Component_Styles/Product_style/Product_section_style.css';
 
-function Product_section({elements, activate_side_bar, set_activate_side_bar}) {
+function Product_section({ elements, activate_side_bar, set_activate_side_bar, set_el_id }) {
   return (
     <div className="prodcut_container">
         <div className={activate_side_bar ? 'activate_product_cont_header' : 'product_cont_header'} >
@@ -24,6 +24,8 @@ function Product_section({elements, activate_side_bar, set_activate_side_bar}) {
               price = {el.price}
               qtn = {el.qtn}
               topSelling = {el.topSelling}
+              set_el_id={set_el_id}
+              id={el.id}
             />
           )
         })}

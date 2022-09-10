@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import Product_Filter from '../Components/Filter_components/Product_Filter';
 import Product_section from '../Components/Product_components/Product_section';
 import '../Styles/Page_Styles/Product.css';
-import {data} from '../Helper/Product_data'
 
-function Product() { 
+function Product({ colectData, set_el_id, data, all_elements}) { 
   // sidebar activation
   let[activate_side_bar, set_activate_side_bar] = useState(false);
 
@@ -41,25 +40,10 @@ function Product() {
 
   // Key Selectors
 
-  // Loops over the data and returns array with objects => [{}, {}, {}...] instead nested obj.
-  function colectData(val){
-    let arr = [];
-    function helper(obj){
-      if(obj.name){
-        arr.push(obj)
-      }else{
-        for(let i in obj){
-          helper(obj[i])
-        }
-      }
-    }
-    helper(val);
-    return arr;
-  }
 
   // checks type. if we mark guitar - data will be filtered and will only return guitar ojbects.
   // by defoult array contains all the elements, and will be changed only if we marked smth.
-  let type = colectData(data)
+  let type = all_elements;
   function changeElementsType(){
     if(guitars === true){
       type = colectData(data.guitar)
@@ -173,6 +157,7 @@ function Product() {
         set_is_top_saller={set_is_top_saller}
       />
       <Product_section 
+        set_el_id={set_el_id}
         elements={elements}
         activate_side_bar={activate_side_bar}
         set_activate_side_bar={set_activate_side_bar}

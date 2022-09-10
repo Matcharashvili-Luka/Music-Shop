@@ -38,6 +38,7 @@
     .filter_container{
         position: absolute;
         left: -230px;
+        height: calc(100vh - 95px);
     }
     .activate_filter_container{
         padding: 1rem 0rem 2rem 1rem;

@@ -66,6 +66,7 @@
 .single_product_info .header{
     display: flex;
     align-items:flex-end;
+    cursor: pointer;
 }
 
 .single_product_info .header .brand{

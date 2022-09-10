@@ -1,0 +1,143 @@
+.single_product_detailed_info_container{
+    display: flex;
+    padding: 0rem 2rem;
+}
+
+.element_info{
+    flex: 5;
+    height: calc(100vh - 95px);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.element_img_container{
+    width: 100%;
+    height: calc(100vh - 95px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.element_img_container h2{
+    margin-bottom: 20px;
+    margin-right: auto;
+}
+
+.element_img_container img{
+    height: 80%;
+}
+
+.element_detailed_info h1{
+    margin: 50px 0px 20px 0px;
+}
+
+.element_detailed_info .el_specs{
+    font-size: 18px;
+    display: flex;
+    margin-bottom: 10px;
+}
+.element_detailed_info .el_specs i{
+    color: green;
+    margin-right: 10px;
+}
+
+.element_detailed_info p i{
+    font-size: 18px;
+    color: green;
+    background-color: green;
+    width: 20px;
+}
+
+/* custom scrollbar */
+.element_info::-webkit-scrollbar{
+    width: 10px;
+}
+.element_info::-webkit-scrollbar-track{
+    background-color: rgb(213, 211, 211);
+}
+.element_info::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 20px;
+    border: 1px solid grey;
+}
+/* custom scroll bar end */
+
+.element_purchase_info{
+    flex: 2;
+    height: calc(100vh - 95px);
+    flex-direction: column;
+    padding: 2rem 1rem 2rem 2rem;
+}
+
+.element_purchase_info .price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.element_purchase_info .price .is_top_selling p{
+    font-size: 33px;
+    color: purple;
+}
+
+.element_purchase_info .price .price_details{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.element_purchase_info .price .price_details h1{
+    text-decoration: underline overline;
+}
+
+.element_purchase_info .price .price_details h3{
+    margin-left: 15px;
+    text-decoration: line-through;
+    color: rgb(88, 88, 88);
+}
+
+.element_purchase_info .text{
+    font-size: 18px;
+}
+
+.element_purchase_info .text p{
+    margin: 5px 0px;
+}
+
+.element_purchase_info .text .in_stock{
+    color: green;
+}
+
+.element_purchase_info .text .sold_out{
+    color: red;
+}
+
+.element_purchase_info .button{
+    text-align: center;
+}
+
+.element_purchase_info .button button{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 900;
+    background-color: black;
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    margin: 40px 0px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.element_purchase_info .button button:hover{
+    background-color: #fff;
+    outline: 1px solid black;
+    color: black;
+}
+
+.element_purchase_info .warranty p i{
+    font-size: 18px;
+    margin: 0px 10px 5px 0px;
+    color: green;
+}
