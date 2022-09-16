@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Styles/Component_Styles/NavBar.css';
-import Announcement from './Announcement';
+import Announcement from './Home_page_elements/Announcement';
 import { Link } from 'react-router-dom';
 
 function NavBar({ cart }) {

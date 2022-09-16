@@ -1,0 +1,30 @@
+.about_header{
+    font-size: 35px;
+}
+
+.about_header_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_header_container i{
+    margin-left: 50px;
+    font-size: 40px;
+    color: red;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#hide_about{
+    display: none;
+}
+
+#arrow_up{
+    transform: rotate(-180deg);
+}
+
+.about_header {
+    margin-top: 50px;
+    text-align: center;
+}

@@ -134,6 +134,8 @@
 @media screen and (max-width: 650px) {
     .single_product_container{
         width: calc(100vw - 56px);
+        background-color: #fff;
+        height: 150px;
     }
     .single_product_info .info{
         display: none;

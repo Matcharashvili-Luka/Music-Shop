@@ -25,12 +25,35 @@
     text-align: center;
 }
 
+.brands_header_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brands_header_container i{
+    margin-left: 50px;
+    font-size: 40px;
+    color: red;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.brands_header_container #arrow_up{
+    transform: rotate(-180deg);
+}
+
 .brands div h1{
     font-size: 70px;
 }
 
 .fender, .hb{
     height: 140px;
+}
+
+#brands-up{
+    display: none;
 }
 
 @media screen and (max-width: 960px) {

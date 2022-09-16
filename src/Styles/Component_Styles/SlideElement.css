@@ -4,6 +4,7 @@
     display: flex;
 }
 
+.slide_element_pic2 img,
 .slide_element_pic img{
     width: 500px;
     height: 100%;
@@ -41,6 +42,7 @@
     color: gray;
 }
 
+.responsive_shop_btn,
 .slide_element_text button{
     margin-top: 2rem;
     padding: 1rem 2rem;
@@ -51,25 +53,24 @@
     transition: .3s;
 }
 
+.responsive_shop_btn:hover,
 .slide_element_text button:hover{
     box-shadow: 0px 0px 36px 0px rgb(198, 194, 194);
     background-color: rgb(75, 167, 243);
     color: #fff;
 }
 
-
-@media screen and (max-width: 900px) {
-    .slide_element_pic{
-        width: 430px;
-        display: flex;
-        justify-self: flex-end;
-    }
-    .slide_element_text{
-        padding: 4rem 3rem 4rem 0rem;
-    }
+.responsive_shop_btn{
+    display: none;
 }
 
-@media screen and (max-width: 700px) {
+.slide_element_pic2{
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .slide_element_pic2,
     .slide_element_pic{
         width: 100%;
         display: flex;
@@ -77,8 +78,8 @@
     }
 
     .slide_element_text{
+        padding: 4rem 3rem 4rem 0rem;
         display: flex;
-        background-color: red;
         width: 400px;
     }
 
@@ -88,9 +89,9 @@
     
     .slide_element_text{
         position: absolute;
-        top: 180px;
+        top: 40%;
         left: calc(50% - 150px);
-        width: 300px;
+        max-width: 300px;
         height: 300px;
         color: #fff;
         background-color: rgba(0, 0, 0, .6);
@@ -106,8 +107,49 @@
         font-weight: 300;
     }
     .slide_element_text button{
-        margin-top: 0rem;
         padding: .5rem 1rem;
-        font-size: 18px;
+        font-size: 30px;
+    }
+    .slide_element_pic2{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .slide_element_text{
+        height: 200px;
+        align-items: center;
+    }
+    .slide_element_text h1{
+        display: block;
+        font-size: 50px;
+        margin-bottom: 0px;
+    }
+    .slide_element_text p{
+        display: none;
+    }
+    .slide_element_pic2 img,
+    .slide_element_pic img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .slide_element_text{
+        display: none;
+    }
+    .respo_btn_container{
+        display: flex;
+        justify-content: center;
+    }
+    .responsive_shop_btn{
+        display: block;
+        margin-top: -5rem;
+    }
+    .slide_element_pic2{
+        display: block;
+    }
+    .slide_element_pic{
+        display: none;
     }
 }
