@@ -8,7 +8,7 @@ import jackson from '../../Assets/Brands/Jackson_Logo.jpg';
 import '../../Styles/Component_Styles/Home_page_brands.css';
 
 function Home_page_brands() {
-    const[showBrands, setShowBrands] = useState(true);
+    const[showBrands, setShowBrands] = useState(false);
 
   return (
     <div className="brands">

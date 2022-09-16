@@ -4,7 +4,7 @@ import Store from './Store';
 import '../../../Styles/Component_Styles/About/About.css';
 
 function About() {
-  const[showAbout, setShowAbout] = useState(true);
+  const[showAbout, setShowAbout] = useState(false);
 
   return (
     <div className='about_container'>

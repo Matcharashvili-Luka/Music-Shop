@@ -7,9 +7,20 @@ import Product from './Pages/Product';
 import { data } from './Helper/Product_data'
 import Single_product_detailed from './Components/Product_components/Single_product_detailed';
 import Shopping_cart from './Components/Shopping_cart';
+import { GridLoader } from 'react-spinners';
 
 
 function App() {
+  // screen loading animation;
+  const[loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false);
+    }, 6000);
+  }, [])
+
   // to store cart elements.
   const[cart, setCart] = useState(JSON.parse(localStorage.getItem('Music_Shop_Cart')) || []);
 
@@ -57,47 +68,58 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
-        <NavBar cart={ cart }/>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route 
-            path='/products' 
-            element={
-                <Product 
-                  set_el_id={set_el_id}
-                  colectData={colectData}
-                  all_elements={all_elements}
-                  data={data}
+      {
+        loading ? 
+          <div className="loading_animation">
+            <GridLoader 
+              size={30}
+              color={'#36d7b7'}
+              loading={loading}
+            />
+          </div>
+        :
+        <div className="App">    
+          <NavBar cart={ cart }/>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route 
+              path='/products' 
+              element={
+                  <Product 
+                    set_el_id={set_el_id}
+                    colectData={colectData}
+                    all_elements={all_elements}
+                    data={data}
+                    onAdd={onAdd}
+                  />
+                } 
+              />
+            <Route 
+              index
+              path={`/products/product-${el_id}`} 
+              element={
+                <Single_product_detailed
+                  el_id={el_id}
+                  all_elements={all_elements} 
+                  cart={cart}
+                  setCart={setCart}
                   onAdd={onAdd}
                 />
-              } 
+              }
             />
-          <Route 
-            index
-            path={`/products/product-${el_id}`} 
-            element={
-              <Single_product_detailed
-                el_id={el_id}
-                all_elements={all_elements} 
-                cart={cart}
-                setCart={setCart}
-                onAdd={onAdd}
-              />
-            }
-          />
-          <Route 
-            index
-            path={`/shopping-cart`} 
-            element={
-              <Shopping_cart 
-                cart={cart}
-                onRemove={onRemove}
-              />
-            }
-          />
-        </Routes>
-      </div>
+            <Route 
+              index
+              path={`/shopping-cart`} 
+              element={
+                <Shopping_cart 
+                  cart={cart}
+                  onRemove={onRemove}
+                />
+              }
+            />
+          </Routes>
+        </div>
+      }
     </Router>
   );
 }
